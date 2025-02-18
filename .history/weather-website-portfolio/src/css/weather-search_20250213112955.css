@@ -1,0 +1,215 @@
+.weather-search {
+  position: relative; /* Needed for the absolute position of the suggestions */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 400px; /* Limit width for a clean layout */
+  margin: 20px auto; /* Center the component */
+}
+
+.search-input {
+  width: 100%; /* Occupy the full width of the container */
+  padding: 12px; /* Inner padding for better readability */
+  border: 2px solid #4682B4; /* Rain Drop Blue border */
+  border-radius: 8px; /* Smooth rounded corners */
+  font-size: 16px; /* Comfortable font size */
+  color: #2F4F4F; /* Dark Gray for text */
+  outline: none; /* Remove default focus outline */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus transitions */
+  background-color: #F5F5F5; /* Cloud White background */
+}
+
+/* Focus State */
+.search-input:focus {
+  border-color: #FFD700; /* Sunshine Yellow border */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); /* Yellow glow */
+  background-color: #FFFFFF; /* Bright white background */
+}
+
+/* Hover State */
+.search-input:hover {
+  border-color: #6A5ACD; /* Thunderstorm Purple on hover */
+}
+
+.suggestions-list {
+  list-style: none; /* Remove default list bullets */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  background-color: #fff;
+  border-radius: 8px; /* Smooth rounded corners */
+  position: absolute; /* Position relative to the search bar */
+  width: 100%; /* Match the width of the search bar */
+  max-height: 200px; /* Limit height for better UX */
+  overflow-y: auto; /* Enable vertical scrolling for long lists */
+  z-index: 1000; /* Ensure it appears above other elements */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 100;
+}
+
+.suggestion-item {
+  padding: 10px; /* Space around each suggestion */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
+  font-size: 16px; /* Comfortable font size */
+  color: #2F4F4F; /* Dark Gray text color */
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect */
+.suggestion-item:hover {
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);  border: 1px solid #ccc; /* Subtle border to separate from input */
+}
+
+@media (max-width: 768px) {
+  .weather-search {
+    max-width: 90%; /* Reduce max-width for smaller devices */
+  }
+
+  .search-input {
+    font-size: 14px; /* Smaller font size */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .suggestion-item {
+    font-size: 14px; /* Match input font size */
+  }
+}
+
+
+.loading-spinner {
+  border: 4px solid #F5F5F5; /* Light gray background */
+  border-top: 4px solid #4682B4; /* Rain Drop Blue spinner */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.weather-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.weather-details h2 {
+  margin-bottom: 10px;
+  color: #4682B4; /* Rain Drop Blue */
+}
+
+.weather-details p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #2F4F4F; /* Dark Gray */
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.clear-btn, .save-btn {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.clear-btn {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  box-shadow: 10px 5px 5px rgb(220, 216, 216);
+}
+
+.save-btn {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  box-shadow: 10px 5px 5px rgb(220, 216, 216);;
+}
+
+.clear-btn:hover, .save-btn:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
+  transition: 0.3s ease-in-out; /* Smooth and faster transition */
+}
+
+
+.saved-cities {
+  margin-top: 20px;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.city-card {
+  background-color: lightgray;
+  padding: 20px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+  border-radius: 10px;
+  white-space: nowrap;
+  
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.city-card {
+  position: relative; /* Allows X button positioning */
+  background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+

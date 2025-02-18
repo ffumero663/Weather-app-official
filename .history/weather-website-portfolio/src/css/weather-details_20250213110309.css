@@ -1,0 +1,16 @@
+.weather-details {
+  background-color: lightgray;
+  padding: 20px;
+  border: 1px solid black;
+  
+}
+
+.weather-image {
+  text-align: center;
+}
+
+.weather-image img {
+  display: inline-block; /* Ensures the image respects text alignment */
+  max-width: 100%;
+  height: auto;
+}

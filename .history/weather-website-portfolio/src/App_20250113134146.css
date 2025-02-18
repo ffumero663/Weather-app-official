@@ -1,0 +1,94 @@
+/* Center the content */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #4682B4; /* Rain Drop Blue */
+}
+
+.weather-search {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #4682B4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #2F4F4F;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #F5F5F5;
+}
+
+.search-input:focus {
+  border-color: #FFD700; /* Sunshine Yellow */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #2F4F4F;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.loading-spinner {
+  border: 4px solid #F5F5F5;
+  border-top: 4px solid #4682B4;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+

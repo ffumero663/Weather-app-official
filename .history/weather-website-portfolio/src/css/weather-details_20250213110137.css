@@ -1,0 +1,13 @@
+.weather-details {
+  background-color: lightgray;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.weather-image{
+  justify-content: center;
+  text-align: center;
+  place
+  width: 50%;
+  height: auto;
+}
